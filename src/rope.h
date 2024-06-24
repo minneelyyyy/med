@@ -9,7 +9,7 @@
 #define KIND_BRANCH 0xA1
 
 struct leaf {
-	struct str_rc *rc;
+	struct rc *rc;
 	size_t sz;
 	char *data;
 };
@@ -32,7 +32,7 @@ struct rope {
     struct node head;
 };
 
-struct rope new_rope(char *s);
-struct rope new_rope_dup(char *s);
+struct rope rope_new(char *s);
+struct rope rope_new_dup(char *s);
 
 #endif /* __ROPE_H */
