@@ -1,7 +1,7 @@
 
 #include <stddef.h>
 
-static size_t FIBONACCI_SEQUENCE[] = {
+static const size_t FIBONACCI_SEQUENCE[] = {
 	1,
 	1,
 	2,
