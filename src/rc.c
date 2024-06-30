@@ -23,7 +23,7 @@ struct rc rc_new(void *ptr, void (*freefn)(void *)) {
 struct rc *rc_new_alloc(void *ptr, void (*freefn)(void *)) {
 	struct rc *rc = malloc(sizeof *rc);
 
-	*rc = rc_new(ptr, freefn);
+	rc = rc_new(ptr, freefn);
 	rc->rc = RC_MAKE_HEAP_ALLOCATED(RC_COUNT(rc));
 
 	return rc;

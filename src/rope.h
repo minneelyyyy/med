@@ -4,6 +4,7 @@
 #include <stddef.h>
 
 #include "rc.h"
+#include "dyn.h"
 
 #define KIND_LEAF   0x1A
 #define KIND_BRANCH 0xA1
@@ -33,6 +34,10 @@ struct rope {
 };
 
 struct rope rope_new(char *s);
-struct rope rope_new_dup(char *s);
+struct rope rope_new_dup(const char *s);
+
+void rope_free(struct rope *rope);
+
+struct array rope_collect(struct rope *r);
 
 #endif /* __ROPE_H */

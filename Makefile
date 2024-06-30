@@ -1,7 +1,7 @@
 
 OUT=med
 
-OBJS=src/med.o src/rope.o src/rc.o src/buffer.o
+OBJS=src/med.o src/rope.o src/rc.o src/buffer.o src/dyn.o
 
 all: $(OUT)
 
