@@ -23,9 +23,12 @@ void array_free(struct array *arr) {
 struct array *array_push(struct array *arr, void *ptr) {
     if (arr->size == arr->cap) {
         size_t new_cap = arr->cap * 3 / 2;
-        void **newelems = realloc(arr->elems, sizeof(*arr->elems) * new_cap);
+        void **new_elems = realloc(arr->elems, sizeof(*arr->elems) * new_cap);
 
-        if (!newelems) return NULL;
+        if (!new_elems) return NULL;
+
+        arr->cap = new_cap;
+        arr->elems = new_elems;
     }
 
     arr->elems[arr->size++] = ptr;
